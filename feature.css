@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*colors*/
+  --LIGHT-GRAY: hsl(212, 6%, 44%);
+  --DARK-GRAY: hsl(234, 12%, 34%);
+  --WHITE: hsl(0, 0%, 100%);
+  --CYAN: hsl(180, 62%, 55%);
+  --RED: hsl(0, 78%, 62%);
+  --ORANGE: hsl(34, 97%, 64%);
+  --BLUE: hsl(212, 86%, 64%);
+  --VERY-LIGHT-GRAY: rgb(220, 217, 217);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.reliable {
+  padding: 0.8rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+h1 {
+  color: var(--LIGHT-GRAY);
+  font-weight: 200;
+  font-size: 1.6rem;
+}
+
+.p-big {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.p-normal {
+  text-align: center;
+  color: var(--LIGHT-GRAY);
+}
+
+.feature-cards {
+  display: grid;
+  padding: 2rem 0;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "su"
+    "te"
+    "ka"
+    "ca";
+  gap: 2rem;
+}
+
+.feature-cards div {
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.supervisor {
+  border-top: 4px solid var(--CYAN);
+  align-self: center;
+  grid-area: su;
+}
+
+.team-builder {
+  border-top: 4px solid var(--RED);
+  grid-area: te;
+}
+
+.karma {
+  border-top: 4px solid var(--ORANGE);
+  grid-area: ka;
+}
+
+.calculator {
+  border-top: 4px solid var(--BLUE);
+  grid-area: ca;
+  align-self: center;
+}
+
+div .p-small {
+  color: var(--LIGHT-GRAY);
+}
+
+div .right {
+  display: flex;
+  padding: 1.5rem 0;
+  margin-left: auto;
+  max-inline-size: 100%;
+  block-size: auto;
+  width: 80px;
+}
+
+.attribution {
+  text-align: center;
+  font-size: 11px;
+}
+
+.attribution a {
+  color: var(--DARK-GRAY);
+}
+
+footer {
+  margin-bottom: 0;
+}
+
+@media (min-width: 48rem) {
+  h1,
+  .p-big {
+    font-size: 2rem;
+  }
+
+  .p-normal {
+    color: var(--DARK-GRAY);
+  }
+
+  .reliable {
+    padding: 2rem;
+  }
+
+  .feature-cards {
+    max-inline-size: 100%;
+    width: 1200px;
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 1rem;
+    grid-template-areas:
+      "su ka"
+      "te ca";
+  }
+}
+
+@media (min-width: 64rem) {
+  .reliable {
+    margin: auto;
+  }
+
+  .reliable .p-normal {
+    width: 500px;
+  }
+
+  .feature-cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "su te ca"
+      "su ka ca";
+    gap: 2.5rem;
+  }
+}
